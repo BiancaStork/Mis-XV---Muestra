@@ -1,26 +1,116 @@
  /* Reset global */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
         
-        /* Estilos generales */
-        body {
-            font-family: 'Poppins', sans-serif;
-            margin: 0;
-            padding: 0;
-            line-height: 1.6;
-        }
+/* Estilos generales */
+body {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  color: #333; /* color base, puedes cambiar */
+  line-height: 1.6;
+}
+
+/* Opcional: para títulos más pesados */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+}
+
+
 
 header img {
-  max-height: 400px;
-  object-fit: contain;
-  width: 100%;
+  width: 100%;           /* Siempre ocupa todo el ancho */
+  height: auto;          /* Altura automática para mantener proporción */
+  max-height: 600px;     /* Limita altura en pantallas pequeñas */
+  object-fit: cover;     /* Cubre el contenedor recortando lo que sobra */
+  object-position: top;  /* Muestra la parte superior de la imagen */
+  display: block;        /* Elimina espacios en línea */
 }
+
+/* Pantallas grandes */
 @media (min-width: 768px) {
   header img {
-    max-height: 550px;
+    max-height: 550px;   /* Más alto en pantallas grandes */
   }
 }
+
+.nombre-vibes {
+  font-family: 'Great Vibes', cursive;
+  font-size: 5rem;         /* Puedes ajustar el tamaño */
+  font-weight: 400;          /* Great Vibes solo tiene un peso */
+  color: #181717;            /* Un color elegante, puedes cambiarlo */
+  letter-spacing: 0.04em;
+  display: inline-block;
+  vertical-align: middle;
+}
+/* Media query para pantallas pequeñas */
+@media (max-width: 600px) {
+  .nombre-vibes {
+    font-size: 2.8rem;    /* Tamaño reducido para móviles */
+  }
+}
+
+
+#countdown {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  max-width: 700px;
+  margin: 2rem auto;
+}
+
+.countdown-card {
+  min-width: 120px;
+  padding: 1.2rem 1rem;
+  text-align: center;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  background-color:#fdcae1; /* color de fondo */
+  color: #4a4a4a;
+  user-select: none;
+  transition: transform 0.3s ease;
+}
+
+.countdown-card:hover {
+  transform: scale(1.05);
+}
+
+.countdown-card span {
+  font-size: 2.5rem;
+  font-weight: 700;
+  display: block;
+  line-height: 1;
+}
+
+.countdown-card span {
+  font-size: 2.5rem; /* tamaño base para pantallas grandes */
+  font-weight: 700;
+  display: block;
+  line-height: 1;
+}
+
+
+
+/* Ajuste para pantallas pequeñas */
+@media (max-width: 768px) {
+  .countdown-card span {
+    font-size: 1.8rem; /* tamaño más pequeño para móviles */
+  }
+
+  .countdown-card {
+    min-width: 80px;
+    padding: 0.6rem 0.5rem;
+  }
+
+  .countdown-card .label {
+    font-size: 0.9rem;
+  }
+}
+
+
+
+
 
