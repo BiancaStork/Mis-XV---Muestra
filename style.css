@@ -97,7 +97,7 @@ header img {
 /* Ajuste para pantallas pequeñas */
 @media (max-width: 768px) {
   .countdown-card span {
-    font-size: 1.8rem; /* tamaño más pequeño para móviles */
+    font-size: 1.5rem; /* tamaño más pequeño para móviles */
   }
 
   .countdown-card {
