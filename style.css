@@ -17,6 +17,48 @@ body {
 h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
 }
+header {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+section.container-fluid {
+  margin-top: 0;
+  padding-top: 0;
+}
+/* La sección ocupa todo el ancho de la pantalla */
+ .text-container {
+  width: 100vw;
+  max-width: 100%;
+  padding: 1.5rem 2rem;
+  margin: 0 auto 1.5rem auto;
+  box-sizing: border-box;
+  /* background-color: #fff0f6; opcional */
+  text-align: center;
+}
+
+.line {
+  width: 50%;              /* Ancho limitado */
+  height: 3px;
+  background-color: #adadad;
+  margin: 1rem auto;         /* Centrar y separar */
+  border-radius: 1px;
+}
+
+
+  /* Justificar el texto */
+  .text-justify {
+    text-align: center;
+  }
+
+  /* Opcional: estilos para el párrafo */
+  .text-container p.lead {
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: #4a4a4a;
+    font-family: 'Poppins', sans-serif; /* Ajusta a tu fuente */
+    margin: 0;
+  }
 
 
 
@@ -28,6 +70,49 @@ header img {
   object-position: top;  /* Muestra la parte superior de la imagen */
   display: block;        /* Elimina espacios en línea */
 }
+/*Carrusel */
+.swiper {
+      width: 100%;
+      max-width: 900px;
+      margin: auto;
+    }
+    .swiper-slide img {
+      width: 100%;
+      border-radius: 8px;
+      object-fit: cover;
+      object-position: top;
+      height: 300px;
+    }
+    /* Quita el filtro que aplica el color azul */
+.swiper-button-prev,
+.swiper-button-next {
+  filter: none !important; /* Quita filtro para que el color funcione */
+}
+
+/* Cambia el color de las flechas */
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  color: #e75480 !important; /* Color rosa */
+  font-size: 24px;           /* Ajusta tamaño si quieres */
+}
+
+/* Opcional: cambia el color al pasar el mouse */
+.swiper-button-prev:hover::after,
+.swiper-button-next:hover::after {
+  color: #ff99bb !important; /* Rosa más claro en hover */
+}
+/* Color de los puntos normales */
+.swiper-pagination-bullet {
+  background-color: #e75480 !important; /* Rosa */
+  opacity: 0.5;                         /* Puedes ajustar la opacidad */
+}
+
+/* Color del punto activo */
+.swiper-pagination-bullet-active {
+  background-color: #ff4d94 !important; /* Rosa más intenso */
+  opacity: 1;
+}
+
 
 /* Pantallas grandes */
 @media (min-width: 768px) {
@@ -56,19 +141,23 @@ header img {
 #countdown {
   display: flex;
   justify-content: center;
-  gap: 1.5rem;
-  flex-wrap: wrap;
-  max-width: 700px;
+  gap: 1rem;          /* Espacio reducido para que quepan más */
+  flex-wrap: nowrap;    /* Evita que las cards bajen de línea */
+  max-width: 100vw;
+  width: 100%;
+  padding: 0 0.8rem;
+  box-sizing: border-box;
   margin: 2rem auto;
 }
 
+
 .countdown-card {
-  min-width: 120px;
+  min-width: 150px;
   padding: 1.2rem 1rem;
   text-align: center;
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  background-color:#fdcae1; /* color de fondo */
+  /* border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1); */
+  /* background-color:#fdcae1; color de fondo */
   color: #4a4a4a;
   user-select: none;
   transition: transform 0.3s ease;
@@ -96,17 +185,37 @@ header img {
 
 /* Ajuste para pantallas pequeñas */
 @media (max-width: 768px) {
-  .countdown-card span {
-    font-size: 1rem; /* tamaño más pequeño para móviles */
+  .countdown-card {
+    min-width: 100px;       /* Cards un poco más anchas */
+    padding: 0.8rem 0.5rem;   /* Más padding para que se vean más grandes */
+    margin: 0 0.1rem;       /* Menos espacio horizontal entre cards */
   }
 
-  .countdown-card {
-    min-width: 80px;
-    padding: 0.6rem 0.5rem;
+  .countdown-card span {
+    font-size: 1.2rem;      /* Números un poco más grandes */
   }
 
   .countdown-card .label {
-    font-size: 0.9rem;
+    font-size: 0.85rem;     /* Etiquetas un poco más grandes */
+  }
+
+  /* Si usas flexbox en el contenedor, controla el gap así: */
+  #countdown {
+    gap: 0.8rem;            /* Reduce el espacio entre cards */
+  }
+}
+
+img.responsive-gif {
+  width: 100%;
+  max-width: 100px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+@media (max-width: 600px) {
+  img.responsive-gif {
+    max-width: 75px; /* Más pequeño en móviles */
   }
 }
 
