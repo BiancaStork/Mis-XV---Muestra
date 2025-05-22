@@ -45,7 +45,7 @@
 </header>
 
 <!-- Cuenta regresiva -->
-<section class="container-fluid text-center mt-0" style="background-color:#fdcae1;">
+<section class="container text-center mt-0" style="background-color:#fdcae1;">
   <div id="countdown"></div>
 </section>
 
@@ -88,35 +88,57 @@
 
 <!-- Datos del evento -->
 <section id="fecha" class="container text-center mt-4 mb-4">
+   <h4>¿CUÁNDO?</h4>
    <img src="resources/fecha.gif" alt="Icono animado" class="responsive-gif" style="width: 150px; height: auto;">
-    <h4>¿CUÁNDO?</h4>
     <p class="fs-5">20 DE JUNIO 2025 </p>
     <p class="fs-5">| 21:00 HS |</p>
 </section>
-<section id="salon" class="container text-center mb-4" >
-    <h4>¿DÓNDE?</h4>
-    <p class="fs-5">SALON DEL EVENTO</p>
-  </section>
+<section id="salon" class="container text-center mb-4" style="background-color:#fdcae1;">
+  <h4>¿DÓNDE?</h4>  
+  <!-- Icono y botón en la misma línea -->
+  <div style="display: flex; align-items: center; justify-content: center;">
+    <img src="resources/ubicacion.gif" alt="Icono animado" class="responsive-gif" style="width: 150px; height: auto; margin: 0; padding: 0;">
+    <a href="https://maps.app.goo.gl/RnaSvhb9u8fx1kUj6" target="_blank" class="btn btn-secondary btn-sm" style="margin-left: 1px; margin-top: 5px;">
+      Cómo llegar al salón
+    </a>
+  </div>
+  <!-- Nombre del salón y dirección -->
+  <div style="margin-bottom: 15px;">
+    <p style="margin: 0;">Complejo Ysiry | Salón de Eventos</p>
+    <p style="font-size: 14px; margin-top: 5px; margin-bottom: 0;">RN12 1549, N3380 Eldorado, Misiones</p>
+     <img src="resources/ysiry.png" alt="logo salon" 
+           style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); margin-bottom: 10px;">
+  </div>  
+</section>
+
 
   <!-- Sección regalos -->
-  <section class="container text-center mb-4" >
-    <h4>REGALOS</h4>
-    <p>Nada es más importante que tu presencia, pero si deseas hacerme un presente puedes depositarlo en la siguiente cuenta:</p>
-    <p>
-      <strong>Alias:</strong> alias.example<br>
-      <strong>CVU:</strong> 00000000000000000<br>
-      <strong>Nombre Titular de la Cuenta</strong>
-    </p>
-  </section>
+  <section id="regalos" class="container text-center mb-4">
+  <!-- <h4>REGALOS</h4> -->
+  <img src="resources/Regalo.gif" alt="Icono animado" class="responsive-gif" style="width: 250px; height: auto;">
+  <p>Nada es más importante que tu presencia, pero si deseas hacerme un presente puedes depositarlo en la siguiente cuenta:</p>
+
+  <!-- Botón para mostrar/ocultar -->
+  <button class="btn btn-secondary mb-3" type="button" data-bs-toggle="collapse" data-bs-target="#infoCuenta" aria-expanded="false" aria-controls="infoCuenta">
+    Mostrar datos de la cuenta &#x25BC; <!-- Flecha hacia abajo -->
+  </button>
+
+  <!-- Contenido colapsable -->
+  <p class="collapse" id="infoCuenta">
+    <strong>Alias:</strong> alias.example<br>
+    <strong>CVU:</strong> 00000000000000000<br>
+    <strong>Nombre Titular de la Cuenta</strong>
+  </p>
+</section>
 
   <!-- Dress code -->
-  <section class="container text-center mb-4">
+  <section id="dress" class="container text-center mb-4" style="background-color:#fdcae1;">
     <h4>DRESS CODE</h4>
     <p class="fs-5">ELEGANTE SPORT</p>
   </section>
 
   <!-- Confirmación de asistencia -->
-  <section class="container text-center mb-4" >
+  <section id="confirmar" class="container text-center mb-4"  >
     <h5>CONFIRMÁ TU ASISTENCIA</h5>
     <p>ANTES DEL **Fecha***</p>
     <!-- Aquí puedes poner un botón o un formulario de confirmación -->
