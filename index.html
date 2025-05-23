@@ -23,6 +23,35 @@
 </head>
 
 <body>
+  <!--Musica-->
+  <audio id="musica" loop>
+  <source src="resources/Taylor Swift - Daylight.mp3" type="audio/mpeg">
+  Tu navegador no soporta el elemento de audio.
+</audio>
+ <!-- Botón fijo para pausar/reproducir (oculto inicialmente) -->
+  <button id="btnPlayPause" title="Pausar/Reproducir música" 
+          style="
+            position: fixed;
+            top: 50%;
+            right: 10px;
+            transform: translateY(-50%);
+            background-color: #e91e63;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+            z-index: 1000;
+            display: none; /* Oculto al inicio */
+          ">
+    &#9658;
+  </button>
+
+
+
 <!-- Modal de bienvenida -->
 <div class="modal fade" id="welcomeModal" tabindex="-1" aria-labelledby="welcomeModalLabel" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
   <div class="modal-dialog modal-dialog-centered">
@@ -90,7 +119,7 @@
 <section id="fecha" class="container text-center mt-4 mb-4">
    <h4>¿CUÁNDO?</h4>
    <img src="resources/fecha.gif" alt="Icono animado" class="responsive-gif" style="width: 150px; height: auto;">
-    <p class="fs-5">20 DE JUNIO 2025 </p>
+    <p class="fs-5">26 DE JULIO 2025 </p>
     <p class="fs-5">| 21:00 HS |</p>
 </section>
 <div class="line"></div>
@@ -98,17 +127,17 @@
   <h4>¿DÓNDE?</h4>  
   <!-- Icono y botón en la misma línea -->
   <div style="display: flex; align-items: center; justify-content: center;">
-    <img src="resources/ubicacion.gif" alt="Icono animado" class="responsive-gif" style="width: 150px; height: auto; margin: 0; padding: 0;">
+    <img src="resources/ubicacion.gif" alt="Icono animado" class="responsive-gif" style="width: 100px; height: auto; margin: 0; padding: 0;">
     <a href="https://maps.app.goo.gl/RnaSvhb9u8fx1kUj6" target="_blank" class="btn btn-secondary btn-sm" style="margin-left: 1px; margin-top: 5px;">
       Cómo llegar al salón
     </a>
   </div>
   <!-- Nombre del salón y dirección -->
   <div style="margin-bottom: 15px;">
-    <p style="margin: 0;">Complejo Ysiry | Salón de Eventos</p>
+    <p style="margin: 0;"><strong> Complejo Ysiry | Salón de Eventos</strong></p>
     <p style="font-size: 14px; margin-top: 5px; margin-bottom: 0;">RN12 1549, N3380 Eldorado, Misiones</p>
      <img src="resources/ysiry.png" alt="logo salon" 
-           style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); margin-bottom: 10px;">
+           style="width: 75px; height: 75px; border-radius: 50%; object-fit: cover; box-shadow: 0 2px 5px rgba(248, 2, 187, 0.2); margin-bottom: 10px;">
   </div>  
 </section>
 <div class="line"></div>
@@ -116,7 +145,7 @@
   <section id="regalos" class="container text-center mb-4">
   <h4>REGALOS</h4>
   <img src="resources/regalos.gif" alt="Icono animado" class="responsive-gif" style="width:150px; height: auto;">
-  <p>Nada es más importante que tu presencia, pero si deseas hacerme un presente puedes depositarlo en la siguiente cuenta:</p>
+  <p style="font-style: italic;">Nada es más importante que tu presencia, pero si deseas hacerme un presente puedes depositarlo en la siguiente cuenta:</p>
 
   <!-- Botón para mostrar/ocultar -->
   <button class="btn btn-secondary mb-3" type="button" data-bs-toggle="collapse" data-bs-target="#infoCuenta" aria-expanded="false" aria-controls="infoCuenta">
@@ -134,14 +163,14 @@
   <!-- Dress code -->
   <div style="display: flex; justify-content: center; align-items: center; gap: 20px; margin-bottom: 15px;">
   
-  <img src="resources/dress.png" alt="Icono animado" class="responsive-gif" style="width:75px; height: auto;">
+  <img src="resources/dress.png" alt="Icono animado" class="responsive-gif" style="width:60px; height: auto;">
 
   <div style="display: flex; flex-direction: column; align-items: center;">
     <h4 style="margin: 0;">DRESS CODE</h4>
-    <p style="margin: 0;">ELEGANTE SPORT</p>
+    <p style="font-style: italic; margin: 0;">Elegante Sport</p>
   </div>
 
-  <img src="resources/suit.png" alt="Icono animado" class="responsive-gif" style="width:75px; height: auto;">
+  <img src="resources/suit.png" alt="Icono animado" class="responsive-gif" style="width:60px; height: auto;">
 
 </div>
 
@@ -149,9 +178,11 @@
   <!-- Confirmación de asistencia -->
   <section id="confirmar" class="container text-center mb-4"  >
     <h5>CONFIRMÁ TU ASISTENCIA</h5>
-    <p>ANTES DEL **Fecha***</p>
-    <!-- Aquí puedes poner un botón o un formulario de confirmación -->
-    <a href="mailto:tuemail@ejemplo.com?subject=Confirmo%20mi%20asistencia%20a%20los%2015" class="btn btn-secondary">Confirmar Asistencia</a>
+    <p style="font-style: italic; color: rgb(53, 52, 52);"><strong>Tenes Tiempo hasta el 01/07/2025</strong></p>
+    
+        <!-- Aquí puedes poner un botón o un formulario de confirmación -->
+    <a href="https://wa.me/543487685254?text=Quiero%20Confirmar%20mi%20Asistencia%20a%20los%20XV%20de%20Loana" target="_blank" rel="noopener noreferrer" class="btn">
+  Contactar por WhatsApp <img src="resources/whatsapp.gif" alt="Icono animado" class="responsive-gif" style="width:75px; height: auto;"></a>
   </section>
 <script src="countdown.js"></script>
 <script>
@@ -209,6 +240,48 @@
           spaceBetween: 0,
         },
       },
+    });
+  </script>
+<!--Scipt Musicalizacion-->
+<script>
+    const audio = document.getElementById('musica');
+    const btnIngresar = document.getElementById('btnIngresar');
+    const btnPlayPause = document.getElementById('btnPlayPause');
+    let isPlaying = false;
+
+    btnIngresar.addEventListener('click', () => {
+      // Reproducir música
+      audio.play().then(() => {
+        isPlaying = true;
+        btnPlayPause.innerHTML = '&#10074;&#10074;'; // Ícono pausa ||
+        btnPlayPause.style.display = 'block'; // Mostrar botón play/pause
+      }).catch(error => {
+        console.log('Error al reproducir:', error);
+      });
+
+      // Cerrar modal Bootstrap 5
+      const modal = bootstrap.Modal.getInstance(document.getElementById('welcomeModal'));
+      modal.hide();
+    });
+
+    btnPlayPause.addEventListener('click', () => {
+      if (isPlaying) {
+        audio.pause();
+        btnPlayPause.innerHTML = '&#9658;'; // Ícono play ▶
+        isPlaying = false;
+      } else {
+        audio.play().then(() => {
+          btnPlayPause.innerHTML = '&#10074;&#10074;'; // Ícono pausa ||
+          isPlaying = true;
+        }).catch(error => {
+          console.log('Error al reproducir:', error);
+        });
+      }
+    });
+
+    audio.addEventListener('ended', () => {
+      btnPlayPause.innerHTML = '&#9658;';
+      isPlaying = false;
     });
   </script>
 
