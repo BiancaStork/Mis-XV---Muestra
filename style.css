@@ -207,7 +207,7 @@ header img {
 
 img.responsive-gif {
   width: 100%;
-  max-width: 100px;
+  max-width: 150px;
   height: auto;
   display: block;
   margin: 0 auto;
@@ -215,7 +215,7 @@ img.responsive-gif {
 
 @media (max-width: 600px) {
   img.responsive-gif {
-    max-width: 75px; /* Más pequeño en móviles */
+    max-width: 100px; /* Más pequeño en móviles */
   }
 }
 
