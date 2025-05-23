@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Mis 15 - Luana</title>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
   <!--Fuentes-->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Playfair+Display&display=swap" rel="stylesheet">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -39,10 +41,12 @@
 <div class="modal-dialog modal-dialog-centered modal-fullscreen"> <!-- modal-lg para ancho mayor -->
 <div class="modal-content d-flex p-0 " style="flex-direction: row; padding: 0;"> <!-- flex container, sin padding para que la imagen ocupe todo -->      
  <!-- Sección izquierda: texto y botón -->
- <div class="modal-left">
-  <!-- <h5 class="mb-3">Mis Quince <strong>Luana</strong></h5> -->
-  <p class="lead">¡Te invito a compartir la noche de mis sueños conmigo!</p>
-  <button type="button" class="btn btn-secondary" id="btnIngresar">Ingresar</button>
+ <div class="modal-left" style="color: rgb(36, 35, 32);">
+  <h5 class="mb-3">Mis 15</h5>  
+  <p class="lead">¡QUIERO COMPARTIR LA NOCHE DE MIS SUEÑOS CON VOS!</p>
+ 
+  <button type="button" id="btnIngresar" class="btn"> <i class="bi bi-balloon-heart-fill bi-3xl"></i> Ingresar</button>
+  
   </div>
  <!-- Sección derecha: imagen -->
  <div class="modal-right"> </div>
@@ -51,10 +55,10 @@
 </div>
 
 <!-- Header con foto y nombre -->
- <header>
+ <header >
   <img src="assets/foto9.jpg" class="img-fluid w-100" alt="header">
   <div class="text-center mt-3">
-    <h1 class="nombre-vibes">Mis 15 Luana</h1>
+    <h1 class="nombre-vibes" >Mis 15 Luana</h1>
   </div>
 </header>
 
@@ -68,72 +72,91 @@
 </section>
 <!-- Mensaje de invitación -->
 <section class="text-container">
-  <div class="line"></div>
-  <p class="lead">
+ 
+  <p>
     "Quiero compartir mi cumpleaños con las personas que llenan mi vida de amor y felicidad.<br>
     Por eso, nada me haría más feliz que contar con tu presencia en este momento tan especial para mí"
   </p>
-  <div class="line"></div>
+ 
 </section>
 
 <!--Carrousel imagenes-->
-<div class="swiper mySwiper">
-    <div class="swiper-wrapper">
+<section >
+<div class="swiper mySwiper" style="background-color: #fdcae1;">
+    <div class="swiper-wrapper" style="background-color: #fdcae1;">
       <div class="swiper-slide"><img src="assets/foto1.jpg" alt="Imagen 1" /></div>
       <div class="swiper-slide"><img src="assets/foto2.jpg" alt="Imagen 2" /></div>
       <div class="swiper-slide"><img src="assets/foto3.jpg" alt="Imagen 3" /></div>
       <div class="swiper-slide"><img src="assets/foto4.jpg" alt="Imagen 4" /></div>
-      <div class="swiper-slide"><img src="assets/foto5.jpg" alt="Imagen 5" /></div>
-      <div class="swiper-slide"><img src="assets/foto6.jpg" alt="Imagen 6" /></div>
-      <div class="swiper-slide"><img src="assets/foto7.jpg" alt="Imagen 7" /></div>
-      <div class="swiper-slide"><img src="assets/foto8.jpg" alt="Imagen 8" /></div>
-      <div class="swiper-slide"><img src="assets/foto9.jpg" alt="Imagen 9" /></div>
-      <div class="swiper-slide"><img src="assets/foto10.jpg" alt="Imagen 10" /></div>
-    </div>
+     </div>
 
     <!-- Paginación -->
-    <div class="swiper-pagination"></div>
+    <!-- <div class="swiper-pagination"></div> -->
 
     <!-- Botones de navegación -->
-    <div class="swiper-button-prev"></div>
+    <!-- <div class="swiper-button-prev"></div>
     <div class="swiper-button-next"></div>
-  </div>
+  </div> -->
 </section>
 
 <!-- Datos del evento -->
-<section id="fecha" class="container text-center mt-4 mb-4">
-   <h4>¿CUÁNDO?</h4>
+<section id="fecha" class="container text-center mt-4 mb-4" style="background-color:#fdcae1;">
+   <br>
+   <h4 >¿CUÁNDO?</h4>
    <img src="resources/fecha.gif" alt="Icono animado" class="responsive-gif" style="width: 150px; height: auto;">
-    <p class="fs-5">26 DE JULIO 2025 </p>
-    <p class="fs-5">| 21:00 HS |</p>
+    <p class="fs-5" >26 DE JULIO 2025 </p>
+    <p class="fs-5" >| 21:00 HS |</p>
 </section>
-<div class="line"></div>
+<!-- <div class="line"></div> -->
 <section id="salon" class="container text-center mb-4">
   <h4>¿DÓNDE?</h4>  
-  <!-- Icono y botón en la misma línea -->
-  <div style="display: flex; align-items: center; justify-content: center;">
-    <img src="resources/ubicacion.gif" alt="Icono animado" class="responsive-gif" style="width: 100px; height: auto; margin: 0; padding: 0;">
-    <a href="https://maps.app.goo.gl/RnaSvhb9u8fx1kUj6" target="_blank" class="btn btn-secondary btn-sm" style="margin-left: 1px; margin-top: 5px;">
-      Cómo llegar al salón
-    </a>
-  </div>
   <!-- Nombre del salón y dirección -->
   <div style="margin-bottom: 15px;">
+    <br>
     <p style="margin: 0;"><strong> Complejo Ysiry | Salón de Eventos</strong></p>
     <p style="font-size: 14px; margin-top: 5px; margin-bottom: 0;">RN12 1549, N3380 Eldorado, Misiones</p>
      <img src="resources/ysiry.png" alt="logo salon" 
            style="width: 75px; height: 75px; border-radius: 50%; object-fit: cover; box-shadow: 0 2px 5px rgba(248, 2, 187, 0.2); margin-bottom: 10px;">
   </div>  
+  <!-- Icono y botón en la misma línea -->
+  <div style="display: flex; align-items: center; justify-content: center;">
+    <img src="resources/ubicacion.gif" alt="Icono animado" class="responsive-gif" style="width: 100px; height: auto; margin: 0; padding: 0;">
+    <a href="https://maps.app.goo.gl/RnaSvhb9u8fx1kUj6" target="_blank" class="btn" style="margin-left: 1px; margin-top: 5px;">
+      Cómo llegar al salón
+    </a>
+  </div>
+  </section>
+<!-- Mensaje de invitación -->
+<section class="text-container" style="background-color:#fdcae1;">
+ 
+  <p>
+    <br>
+    <br>
+    "Tu presencia hara que esta Noche sea INOLVIDABLE"
+    <br>
+    <br>
+  </p>
 </section>
-<div class="line"></div>
+<!--Carrousel imagenes-->
+<section >
+<div class="swiper mySwiper" style="background-color: #fdcae1;">
+    <div class="swiper-wrapper" style="background-color: #fdcae1;">
+      <div class="swiper-slide"><img src="assets/foto3.jpg" alt="Imagen 1" /></div>
+      <div class="swiper-slide"><img src="assets/foto4.jpg" alt="Imagen 2" /></div>
+      <div class="swiper-slide"><img src="assets/foto5.jpg" alt="Imagen 3" /></div>
+      <div class="swiper-slide"><img src="assets/foto6.jpg" alt="Imagen 4" /></div>
+    </div>
+</section>
+
   <!-- Sección regalos -->
   <section id="regalos" class="container text-center mb-4">
-  <h4>REGALOS</h4>
+     <br>
+     <h4>REGALOS</h4>
   <img src="resources/regalos.gif" alt="Icono animado" class="responsive-gif" style="width:150px; height: auto;">
-  <p style="font-style: italic;">Nada es más importante que tu presencia, pero si deseas hacerme un presente puedes depositarlo en la siguiente cuenta:</p>
+  <p style="font-style: italic;">Nada es más importante que tu presencia, <br> pero si deseas hacerme un presente puedes depositarlo en la siguiente cuenta:</p>
 
   <!-- Botón para mostrar/ocultar -->
-  <button class="btn btn-secondary mb-3" type="button" data-bs-toggle="collapse" data-bs-target="#infoCuenta" aria-expanded="false" aria-controls="infoCuenta">
+  <button class="btn mb-3" type="button" data-bs-toggle="collapse" data-bs-target="#infoCuenta" aria-expanded="false" aria-controls="infoCuenta">
     Mostrar datos de la cuenta &#x25BC; <!-- Flecha hacia abajo -->
   </button>
 
@@ -144,31 +167,58 @@
     <strong>Nombre Titular de la Cuenta</strong>
   </p>
 </section>
-<div class="line"></div>
-  <!-- Dress code -->
-  <div style="display: flex; justify-content: center; align-items: center; gap: 20px; margin-bottom: 15px;">
-  
-  <img src="resources/dress.png" alt="Icono animado" class="responsive-gif" style="width:60px; height: auto;">
 
+  <!-- Confirmación de asistencia -->
+  <section id="confirmar" class="container text-center mb-4" style="background-color:#fdcae1;" >
+    <br>
+    <h5>CONFIRMÁ TU ASISTENCIA</h5>
+    <p style="font-style: italic; color: rgb(53, 52, 52);">Tenes Tiempo hasta el 01/07/2025</p>
+    
+        <!-- Aquí puedes poner un botón o un formulario de confirmación -->
+     <a href="https://wa.me/543487685254?text=Quiero%20Confirmar%20mi%20Asistencia%20a%20los%20XV%20de%20Loana" target="_blank" rel="noopener noreferrer" class="btn">
+    <img src="resources/whatsapp.gif" alt="Icono animado" class="responsive-gif" style="width:60px; height: auto;"></a>
+  </section>
+ <!-- Dress code -->
+  <br>
+  <br>
+  <div style="display: flex; justify-content: center; align-items: center; gap: 20px; margin-bottom: 15px; ">
+  <img src="resources/dress.png" alt="Icono animado" class="responsive-gif" style="width:60px; height: auto;">
   <div style="display: flex; flex-direction: column; align-items: center;">
+    <br> 
+    <br>
     <h4 style="margin: 0;">DRESS CODE</h4>
     <p style="font-style: italic; margin: 0;">Elegante Sport</p>
+    <br>
+    <br>
   </div>
 
   <img src="resources/suit.png" alt="Icono animado" class="responsive-gif" style="width:60px; height: auto;">
 
 </div>
-
-<div class="line"></div>
-  <!-- Confirmación de asistencia -->
-  <section id="confirmar" class="container text-center mb-4"  >
-    <h5>CONFIRMÁ TU ASISTENCIA</h5>
-    <p style="font-style: italic; color: rgb(53, 52, 52);"><strong>Tenes Tiempo hasta el 01/07/2025</strong></p>
+<!-- Mensaje de invitación -->
+<section class="text-container" style="background-color:#fdcae1;">
+  <p >TE ESPERO, NO ME FALLES &#x2665 </p>
+   <p >Sera una Noche Magica ! </p>
+   <p> &#x2665 Luana </p>
+</section>
+<!--Carrousel imagenes-->
+<section >
+<div class="swiper mySwiper" style="background-color: #fdcae1;">
+    <div class="swiper-wrapper" style="background-color: #fdcae1;">
     
-        <!-- Aquí puedes poner un botón o un formulario de confirmación -->
-    <a href="https://wa.me/543487685254?text=Quiero%20Confirmar%20mi%20Asistencia%20a%20los%20XV%20de%20Loana" target="_blank" rel="noopener noreferrer" class="btn">
-  Contactar por WhatsApp <img src="resources/whatsapp.gif" alt="Icono animado" class="responsive-gif" style="width:75px; height: auto;"></a>
-  </section>
+      <div class="swiper-slide"><img src="assets/foto8.jpg" alt="Imagen 1" /></div>
+      <div class="swiper-slide"><img src="assets/foto9.jpg" alt="Imagen 2" /></div>
+      <div class="swiper-slide"><img src="assets/foto10.jpg" alt="Imagen 3" /></div>
+    </div>
+</section>
+
+<section>
+<footer style="background-color: #fdcae1;">
+  <!-- <p> @faBianca | te-invito.com.ar | 2 0 2 5 | Todos los derechos reservados </p> -->
+
+</footer></section>
+
+<!--scripts-->
 <script src="countdown.js"></script>
 <script>
   // Iniciar la cuenta regresiva con la fecha y el id del contenedor

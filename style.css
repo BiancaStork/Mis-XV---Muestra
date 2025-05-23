@@ -9,8 +9,9 @@
 body {
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
-  color: #333; /* color base, puedes cambiar */
+  color: black; /* color base, puedes cambiar */
   line-height: 1.6;
+  
 }
 
 /* Opcional: para títulos más pesados */
@@ -112,12 +113,42 @@ header img {
   background-color: #ff4d94 !important; /* Rosa más intenso */
   opacity: 1;
 }
+
+.btn {
+   width: auto;           /* Ancho automático según contenido */
+  max-width: 300px;      /* Máximo ancho para que no sea muy grande */
+  padding-left: 1.5rem;  /* Ajustá padding para que quede lindo */
+  padding-right: 1.5rem;
+  background-color: transparent; /* Sin fondo */
+  color: #3a3a3a;                /* Color del texto (gris oscuro Bootstrap) */
+  border-left: none !important;
+  border-right: none !important;
+  /* border-top: 1px solid currentColor;    /* Línea arriba con color del texto */
+ /* border-bottom: 1px solid currentColor; Línea abajo con color del texto */
+  border-radius: 0;
+  padding-top: 0.375rem;
+  padding-bottom: 0.375rem;
+  box-shadow: none; /* Quita sombra si la tuviera */
+}
+
+.btn:hover, 
+.btn:focus {
+ background-color: transparent; /* Sin fondo */
+  color: #fa2198;                 /* Color texto al pasar mouse */
+  box-shadow: none;              /* Sin sombra */
+  border-left: none !important;
+  border-right: none !important;
+  /* border-top: 1px solid currentColor; */
+  /* border-bottom: 1px solid currentColor; */
+}
+
+
 #btnPlayPause {
    position: fixed;
             top: 50%;
             right: 10px;
             transform: translateY(-50%);
-            background-color: #e91e63;
+            background-color: #adadad;
             border: none;
             border-radius: 50%;
             width: 50px;
@@ -230,6 +261,34 @@ header img {
         background-position: top center;
         min-height: 300px;
 }
+
+.modal-left h5,
+.modal-left p.lead,
+.modal-left button#btnIngresar {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: slideFadeIn 1s ease forwards;
+}
+
+.modal-left h5 {
+  animation-delay: 0.3s;
+}
+
+.modal-left p.lead {
+  animation-delay: 1s;
+}
+
+.modal-left button#btnIngresar {
+  animation-delay: 1.7s;
+}
+
+@keyframes slideFadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 @media (max-width: 767px) {
   .modal-right {
     display: none; /* Oculta la imagen en pantallas pequeñas */
