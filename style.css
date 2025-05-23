@@ -39,9 +39,9 @@ section.container-fluid {
 }
 
 .line {
-  width: 50%;              /* Ancho limitado */
-  height: 3px;
-  background-color: #adadad;
+  width: 100%;              /* Ancho limitado */
+  height: 1px;
+  background-color: #918c8c;
   margin: 1rem auto;         /* Centrar y separar */
   border-radius: 1px;
 }
