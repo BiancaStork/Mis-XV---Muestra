@@ -29,40 +29,25 @@
   Tu navegador no soporta el elemento de audio.
 </audio>
  <!-- Botón fijo para pausar/reproducir (oculto inicialmente) -->
-  <button id="btnPlayPause" title="Pausar/Reproducir música" 
-          style="
-            position: fixed;
-            top: 50%;
-            right: 10px;
-            transform: translateY(-50%);
-            background-color: #e91e63;
-            border: none;
-            border-radius: 50%;
-            width: 50px;
-            height: 50px;
-            color: white;
-            font-size: 24px;
-            cursor: pointer;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.3);
-            z-index: 1000;
-            display: none; /* Oculto al inicio */
-          ">
+  <button id="btnPlayPause" title="Pausar/Reproducir música" >
     &#9658;
   </button>
 
 
-
 <!-- Modal de bienvenida -->
 <div class="modal fade" id="welcomeModal" tabindex="-1" aria-labelledby="welcomeModalLabel" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content text-center">
-      <div class="modal-body" style=" font-style: italic;">
-        <!-- <h5 class="mb-3" >Mis Quince <strong>Luana</strong></h5> -->
-        <p class="container-fluid lead">¡Te invito a compartir la noche de mis sueños conmigo!</p>
-        <button type="button" class="btn btn-secondary" id="btnIngresar">Ingresar</button>
-      </div>
-    </div>
+<div class="modal-dialog modal-dialog-centered modal-fullscreen"> <!-- modal-lg para ancho mayor -->
+<div class="modal-content d-flex p-0 " style="flex-direction: row; padding: 0;"> <!-- flex container, sin padding para que la imagen ocupe todo -->      
+ <!-- Sección izquierda: texto y botón -->
+ <div class="modal-left">
+  <!-- <h5 class="mb-3">Mis Quince <strong>Luana</strong></h5> -->
+  <p class="lead">¡Te invito a compartir la noche de mis sueños conmigo!</p>
+  <button type="button" class="btn btn-secondary" id="btnIngresar">Ingresar</button>
   </div>
+ <!-- Sección derecha: imagen -->
+ <div class="modal-right"> </div>
+</div>
+</div>
 </div>
 
 <!-- Header con foto y nombre -->
