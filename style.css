@@ -203,7 +203,7 @@ section.container-fluid {
 .btn:focus {
   background-color: var(--color-primary);
   color:#cc0663;
-  box-shadow: 0 4px 10px rgba(243, 19, 120, 0.4);
+  /* box-shadow: 0 4px 10px rgba(243, 19, 120, 0.4); */
   outline: none;
 }
 
@@ -257,7 +257,7 @@ section.container-fluid {
   .countdown-card {
     min-width: 100px;       /* Cards un poco más anchas */
     padding: 0.8rem 0.5rem;   /* Más padding para que se vean más grandes */
-    margin: 0 0.5rem;       /* Menos espacio horizontal entre cards */
+    margin: 0 0.1rem;       /* Menos espacio horizontal entre cards */
   }
 
   .countdown-card span {
