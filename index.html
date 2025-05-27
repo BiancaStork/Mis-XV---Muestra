@@ -127,7 +127,10 @@
 <section id="fecha" class="w-100 text-center mt-4 mb-4" style="background-color:#fdcae1;">
    <br>
    <h4 class="fs-5 fs-lg-3">¿CUÁNDO?</h4>
-   <img src="resources/fecha.gif" alt="Icono animado" class="responsive-gif" style="width: 75px; height: auto;">
+   <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Mis+15+Luana&dates=20250726T210000/20250727T030000&details=Fiesta+de+15+de+Luana&location=Complejo+Ysiry+RN12+1549+Eldorado+Misiones&sf=true&output=xml"
+     target="_blank" rel="noopener noreferrer" class="btn" style="display: inline-flex; align-items: center; gap: 5px;">
+    <img src="resources/fecha.gif" alt="Google Calendar" style="width: 40px; height: auto;">
+    </a>
     <p class="fs-5 fs-lg-3" >26 DE JULIO 2025 </p>
     <p class="fs-5 fs-lg-3" >| 21:00 HS |</p>
     <br>
@@ -143,14 +146,13 @@
      <img src="resources/ysiry.png" alt="logo salon" 
            style="width: 75px; height: 75px; border-radius: 50%; object-fit: cover; box-shadow: 0 2px 5px rgba(248, 2, 187, 0.2); margin-bottom: 10px;">
   </div>  
-  <!-- Icono y botón en la misma línea -->
   <div style="display: flex; align-items: center; justify-content: center;">
-  <a href="https://maps.app.goo.gl/RnaSvhb9u8fx1kUj6" target="_blank" class="btn" style="display: flex; align-items: center; gap: 0; margin-left: 1px; margin-top: 5px; padding: 0;">
-    <span style="margin-left: 0;">Cómo llegar al salón</span>
+  <a href="https://maps.app.goo.gl/RnaSvhb9u8fx1kUj6" target="_blank" rel="noopener noreferrer" class="btn" style="display: flex; align-items: center; gap: 0; margin-left: 1px; margin-top: 5px; padding: 0;">
+    <span style="margin-left: 0;">Cómo llegar</span>
     <img src="resources/ubicacion.gif" alt="Icono animado" style="width: 60px; height: auto; margin: 0; padding: 0; display: inline-block;">
-    
   </a>
 </div>
+
 
   </section>
 <!-- Mensaje de invitación -->
@@ -290,7 +292,53 @@
     </footer>
 
 <!--scripts-->
+<script src="musica-control.js" defer></script>
+
+<!--Modal Bienvenida-->
 <script src="countdown.js"></script>
+<script>document.addEventListener('DOMContentLoaded', function () {
+  var welcomeModal = new bootstrap.Modal(document.getElementById('welcomeModal'));
+  const btnPlayPause = document.getElementById('btnPlayPause');
+  const btnVolverBienvenida = document.getElementById('btnVolverBienvenida');
+  const audio = document.getElementById('musica');
+  const modalLeft = document.querySelector('.modal-left');
+
+  function reiniciarAnimacionesModal() {
+  const animados = modalLeft.querySelectorAll('h4, p.lead, button#btnIngresar');
+  animados.forEach(el => {
+    el.style.animation = 'none';
+    el.offsetHeight; // Fuerza reflow
+    el.style.animation = ''; // Aplica nuevamente la animación
+    el.style.opacity = 1;    // Asegura visibilidad en caso que animation falle
+    el.style.transform = 'translateY(0)'; // Asegura posición final
+  });
+}
+
+
+  // Mostrar modal al inicio y reiniciar animación
+  welcomeModal.show();
+  reiniciarAnimacionesModal();
+
+  // Al hacer click en ingresar, ocultar modal y mostrar botones
+  document.getElementById('btnIngresar').addEventListener('click', function () {
+    welcomeModal.hide();
+    btnPlayPause.style.display = 'block';
+    btnVolverBienvenida.style.display = 'block';
+  });
+
+  // Al volver a mostrar el modal, pausar música, ocultar botones y reiniciar animación
+  btnVolverBienvenida.addEventListener('click', function () {
+    welcomeModal.show();
+    reiniciarAnimacionesModal();
+    if (audio && !audio.paused) {
+      audio.pause();
+      audio.currentTime = 0;
+    }
+    btnPlayPause.style.display = 'none';
+    btnVolverBienvenida.style.display = 'none';
+  });
+});
+</script>
 <script>
   // Iniciar la cuenta regresiva con la fecha y el id del contenedor
   startCountdown('2025-07-20T21:00:00', 'countdown');
@@ -323,37 +371,8 @@
 
 
 
-<!--Modal Bienvenida-->
-<script>
-document.addEventListener('DOMContentLoaded', function () {
-  var welcomeModal = new bootstrap.Modal(document.getElementById('welcomeModal'));
-  const btnPlayPause = document.getElementById('btnPlayPause');
-  const btnVolverBienvenida = document.getElementById('btnVolverBienvenida');
-  const audio = document.getElementById('musica');
 
-  // Mostrar modal al inicio
-  welcomeModal.show();
 
-  // Al hacer click en ingresar, ocultar modal y mostrar botones
-  document.getElementById('btnIngresar').addEventListener('click', function () {
-    welcomeModal.hide();
-    btnPlayPause.style.display = 'block';
-    btnVolverBienvenida.style.display = 'block';
-  });
-
-  // Al volver a mostrar el modal, pausar música y ocultar botones
-  btnVolverBienvenida.addEventListener('click', function () {
-    welcomeModal.show();
-    if (audio && !audio.paused) {
-      audio.pause();
-      audio.currentTime = 0;
-    }
-    btnPlayPause.style.display = 'none';
-    btnVolverBienvenida.style.display = 'none';
-  });
-});
-
-</script>
   <script src="loader.js" defer></script>
 <!-- Swiper JS -->
 <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
