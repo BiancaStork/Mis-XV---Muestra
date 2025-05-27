@@ -25,15 +25,40 @@
 </head>
 
 <body>
+  <!--loading-->
+<div id="loader" style="
+  position: fixed; z-index: 9999; inset: 0; background: white; display: flex; 
+  align-items: center; justify-content: center; flex-direction: column; color:#f31378;">
+  <div class="spinner-border" style="color:#f31378; width: 4rem; height: 4rem;" role="status"></div>
+  <br>
+  <br>
+  <p class="text center fs-5"><strong style="color:#f31378;" >www.teinvitoa.com.ar</strong></p>
+  <p class="mt-3">Cargando invitación...<br>
+    Aguarda un Momento</p>
+  </div>
   <!--Musica-->
   <audio id="musica" loop>
   <source src="resources/Taylor Swift - Daylight.mp3" type="audio/mpeg">
   Tu navegador no soporta el elemento de audio.
 </audio>
  <!-- Botón fijo para pausar/reproducir (oculto inicialmente) -->
-  <button id="btnPlayPause" title="Pausar/Reproducir música" >
+  <div id="btnContainer" style="
+  position: fixed;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  z-index: 1000;
+">
+  <button id="btnPlayPause" style="background-color: #eb94f3; border: none; border-radius: 50%; width: 30px; height: 30px; color: white; font-size: 14px; cursor: pointer; box-shadow: 0 2px 5px rgba(0,0,0,0.3); display: none;">
     &#9658;
   </button>
+  <button id="btnVolverBienvenida" style="background-color: #eb94f3; border: none; border-radius: 50%; width: 30px; height: 30px; color: white; font-size: 18px; cursor: pointer; box-shadow: 0 2px 5px rgba(0,0,0,0.3); display: none;">
+    <i class="bi bi-house-door"></i>
+  </button>
+</div>
 
 
 <!-- Modal de bienvenida -->
@@ -300,55 +325,68 @@
 
 <!--Modal Bienvenida-->
 <script>
-  document.addEventListener('DOMContentLoaded', function () {
-    var welcomeModal = new bootstrap.Modal(document.getElementById('welcomeModal'));
-    welcomeModal.show();
+document.addEventListener('DOMContentLoaded', function () {
+  var welcomeModal = new bootstrap.Modal(document.getElementById('welcomeModal'));
+  const btnPlayPause = document.getElementById('btnPlayPause');
+  const btnVolverBienvenida = document.getElementById('btnVolverBienvenida');
+  const audio = document.getElementById('musica');
 
-    document.getElementById('btnIngresar').addEventListener('click', function () {
-      welcomeModal.hide();
+  // Mostrar modal al inicio
+  welcomeModal.show();
+
+  // Al hacer click en ingresar, ocultar modal y mostrar botones
+  document.getElementById('btnIngresar').addEventListener('click', function () {
+    welcomeModal.hide();
+    btnPlayPause.style.display = 'block';
+    btnVolverBienvenida.style.display = 'block';
+  });
+
+  // Al volver a mostrar el modal, pausar música y ocultar botones
+  btnVolverBienvenida.addEventListener('click', function () {
+    welcomeModal.show();
+    if (audio && !audio.paused) {
+      audio.pause();
+      audio.currentTime = 0;
+    }
+    btnPlayPause.style.display = 'none';
+    btnVolverBienvenida.style.display = 'none';
+  });
+});
+
+</script>
+  <script src="loader.js" defer></script>
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('.swiper.mySwiper').forEach(function(swiperEl) {
+      new Swiper(swiperEl, {
+        slidesPerView: 4,
+        spaceBetween: 0,
+        loop: true, // Esto hace que pase infinitamente
+        autoplay: {
+          delay: 2000,
+          disableOnInteraction: false,
+        },
+        navigation: {
+          nextEl: swiperEl.querySelector('.swiper-button-next'),
+          prevEl: swiperEl.querySelector('.swiper-button-prev'),
+        },
+        pagination: {
+          el: swiperEl.querySelector('.swiper-pagination'),
+          clickable: true,
+        },
+        breakpoints: {
+          320: { slidesPerView: 1, spaceBetween: 0 },
+          576: { slidesPerView: 2, spaceBetween: 0 },
+          768: { slidesPerView: 3, spaceBetween: 0 },
+          992: { slidesPerView: 4, spaceBetween: 0 },
+        },
+      });
     });
   });
 </script>
-<!-- Swiper JS -->
-  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
 
-  <script>
-    const swiper = new Swiper('.mySwiper', {
-      slidesPerView: 4,      // Número de imágenes visibles
-      spaceBetween: 0,      // Espacio entre imágenes en px
-      loop: true,
-      autoplay: {
-      delay: 2000,        // Tiempo entre slides en milisegundos (3 segundos)
-      disableOnInteraction: false, // No desactiva autoplay si el usuario interactúa
-    },
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-      },
-      pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-      },
-      breakpoints: {
-        320: {
-          slidesPerView: 1,
-          spaceBetween: 0,
-        },
-        576: {
-          slidesPerView: 2,
-          spaceBetween: 0,
-        },
-        768: {
-          slidesPerView: 3,
-          spaceBetween: 0,
-        },
-        992: {
-          slidesPerView: 4,
-          spaceBetween: 0,
-        },
-      },
-    });
-  </script>
 <!--Scipt Musicalizacion-->
 <script>
     const audio = document.getElementById('musica');

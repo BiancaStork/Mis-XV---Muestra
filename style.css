@@ -156,25 +156,7 @@ header img {
   /* border-bottom: 1px solid currentColor; */
 }
 
-
-#btnPlayPause {
-   position: fixed;
-            top: 50%;
-            right: 10px;
-            transform: translateY(-50%);
-            background-color: #adadad;
-            border: none;
-            border-radius: 50%;
-            width: 50px;
-            height: 50px;
-            color: white;
-            font-size: 24px;
-            cursor: pointer;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.3);
-            z-index: 1000;
-            display: none; /* Oculto al inicio */
-}
-
+/* 
 
 /* Pantallas grandes */
 @media (min-width: 768px) {
@@ -358,4 +340,12 @@ img.responsive-gif {
   img.responsive-gif {
     max-width: 100px; /* Más pequeño en móviles */
   }
+}
+
+#loader {
+  transition: opacity 0.5s;
+}
+#loader.hide {
+  opacity: 0;
+  pointer-events: none;
 }
